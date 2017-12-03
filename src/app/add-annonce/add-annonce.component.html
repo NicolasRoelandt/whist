@@ -1,0 +1,3 @@
+<select [(ngModel)]="selectedAnnonce" required>
+  <option *ngFor="let annonce of annonces">{{annonce.name}}</option>
+</select>
