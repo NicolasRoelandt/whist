@@ -1,0 +1,4 @@
+<div *ngFor="let name of names; let i = index; trackBy:trackByFn">
+  <input type="text" name="name" [(ngModel)]="names[i]"/>
+</div>
+<button (click)="click()">Commencer!</button>
