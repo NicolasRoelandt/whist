@@ -1,19 +1,16 @@
 import {Injectable } from '@angular/core';
-import {Annonce} from "./models/annonce";
-import {Http} from '@angular/http';
-import {Observable} from "rxjs/Observable";
-import 'rxjs/add/operator/map';
+import {Annonce} from './models/annonce';
+import * as data from 'assets/annonces.json';
 
 @Injectable()
 export class AnnoncesService {
-  private annonces : Observable<Annonce[]>;
+  private annonces: Annonce[];
 
-  constructor(private http:Http) {
-    this.annonces = this.http.get('assets/annonces.json')
-      .map(res => <Annonce[]> res.json());
+  constructor() {
+    this.annonces = <Annonce[]> <any> data;
   }
 
-  public getAnnonces(){
+  public getAnnonces() {
     return this.annonces;
   }
 

@@ -1,7 +1,7 @@
-import {Joueur} from "./joueur";
-import {Annonce} from "./annonce";
+import {Annonce} from './annonce';
+import {Score} from './score';
 
 export class Donne {
-  gagnant: Joueur;
+  scores: Score[];
   annonce: Annonce;
 }

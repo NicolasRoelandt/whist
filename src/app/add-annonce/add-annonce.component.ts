@@ -11,11 +11,11 @@ export class AddAnnonceComponent implements OnInit {
   public annonces: Annonce[];
   public selectedAnnonce;
 
-  constructor(private annonceService:AnnoncesService) {
+  constructor(private annonceService: AnnoncesService) {
   }
 
   ngOnInit() {
-    this.annonceService.getAnnonces().subscribe(annonces => this.annonces = annonces);
+    this.annonces = this.annonceService.getAnnonces();
   }
 
 }
