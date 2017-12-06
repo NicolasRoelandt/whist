@@ -1,6 +1,9 @@
 <table class="table">
-  <tr *ngFor="let joueur of joueurs">
-    <td>{{joueur.name}}</td>
+  <tr>
+    <th>Annonce</th>
+    <th *ngFor="let joueur of joueurs">{{joueur.name}}</th>
   </tr>
   </tbody>
 </table>
+
+<app-add-annonce></app-add-annonce>

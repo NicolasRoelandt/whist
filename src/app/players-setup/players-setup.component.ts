@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {JoueursService} from "../joueurs.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-players-setup',
@@ -9,7 +10,7 @@ import {JoueursService} from "../joueurs.service";
 export class PlayersSetupComponent implements OnInit {
   public names: string[] = [];
 
-  constructor(private joueursService:JoueursService) {
+  constructor(private joueursService:JoueursService, private router:Router) {
     for(let i = 1; i<= 4; i++){
       this.names.push("Joueur " + i);
     }
@@ -24,6 +25,7 @@ export class PlayersSetupComponent implements OnInit {
 
   public click(){
     this.joueursService.setJoueurs(this.names);
+    this.router.navigate(['/scoreboard'])
   }
 
 }

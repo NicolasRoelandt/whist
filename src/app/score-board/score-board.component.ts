@@ -11,10 +11,11 @@ export class ScoreBoardComponent implements OnInit {
   public joueurs : Joueur[];
 
   constructor(private joueursService:JoueursService) {
-    //this.joueurs = this.joueursService.getJoueurs();
   }
 
   ngOnInit() {
+    this.joueurs = this.joueursService.getJoueurs();
+    console.log(this.joueurs);
   }
 
 }

@@ -1,6 +1,5 @@
 export class Joueur {
-  name: string;
   points: number;
 
-  constructor(name: string){}
+  constructor(public name: string){}
 }

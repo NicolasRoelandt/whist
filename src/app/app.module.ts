@@ -10,6 +10,12 @@ import {AnnoncesService} from "./annonces.service";
 import { PlayersSetupComponent } from './players-setup/players-setup.component';
 import { ScoreBoardComponent } from './score-board/score-board.component';
 import {JoueursService} from "./joueurs.service";
+import {RouterModule, Routes} from "@angular/router";
+
+const appRoutes: Routes = [
+  { path: 'scoreboard', component: ScoreBoardComponent },
+  { path: '', component: PlayersSetupComponent }
+];
 
 @NgModule({
   declarations: [
@@ -20,6 +26,10 @@ import {JoueursService} from "./joueurs.service";
     ScoreBoardComponent
   ],
   imports: [
+    RouterModule.forRoot(
+      appRoutes,
+      { enableTracing: true } // <-- debugging purposes only
+    ),
     BrowserModule,
     HttpModule,
     FormsModule
