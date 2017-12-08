@@ -1,7 +1,7 @@
 <select [(ngModel)]="selectedAnnonce" required>
-  <option *ngFor="let annonce of annonces">{{annonce.name}}</option>
+  <option *ngFor="let annonce of annonces" [ngValue]="annonce">{{annonce.name}}</option>
 </select>
 <select [(ngModel)]="winner" required>
-  <option *ngFor="let joueur of joueurs">{{joueur.name}}</option>
+  <option *ngFor="let joueur of joueurs" [ngValue]="joueur">{{joueur.name}}</option>
 </select>
-<button (click)="add">Add</button>
+<button (click)="add()">Add</button>

@@ -3,7 +3,10 @@
     <th>Annonce</th>
     <th *ngFor="let joueur of joueurs">{{joueur.name}}</th>
   </tr>
-  </tbody>
+  <tr *ngFor="let donne of donnes">
+    <td>{{donne.annonce.name}}</td>
+    <td *ngFor="let joueur of joueurs">{{donne.scores.get(joueur)}}</td>
+  </tr>
 </table>
 
 <app-add-annonce></app-add-annonce>
