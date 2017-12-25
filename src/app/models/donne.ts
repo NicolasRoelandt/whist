@@ -1,8 +1,8 @@
 import {Annonce} from './annonce';
-import {Joueur} from "./joueur";
+import {Score} from "./score";
 
 export class Donne {
   constructor(public annonce: Annonce,
-              public scores: Map<Joueur, number>) {
+              public score: Score) {
   }
 }

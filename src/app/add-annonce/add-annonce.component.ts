@@ -5,6 +5,7 @@ import {JoueursService} from "../joueurs.service";
 import {ScoreBoardComponent} from "../score-board/score-board.component";
 import {Donne} from "../models/donne";
 import {Joueur} from "../models/joueur";
+import {Score} from "../models/score";
 
 @Component({
   selector: 'app-add-annonce',
@@ -36,7 +37,7 @@ export class AddAnnonceComponent implements OnInit {
       .forEach(joueur => points.set(joueur, remaining));
 
 
-    this.scoreBoardComponent.addDonne(new Donne(this.selectedAnnonce, points, this.winner));
+    this.scoreBoardComponent.addDonne(new Donne(this.selectedAnnonce, new Score(points)));
   }
 
 }
