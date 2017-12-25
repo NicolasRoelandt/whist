@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {JoueursService} from "../joueurs.service";
 import {Router} from "@angular/router";
 
@@ -19,7 +19,7 @@ export class PlayersSetupComponent implements OnInit {
   ngOnInit() {
   }
 
-  trackByFn(index: number, item: string) {
+  trackByFn(index: number) {
     return index;
   }
 

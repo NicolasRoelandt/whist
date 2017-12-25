@@ -6,7 +6,6 @@ export class JoueursService {
   private joueurs: Joueur[];
 
   constructor() {
-    this.joueurs;
   }
 
   public setJoueurs(names: string[]){

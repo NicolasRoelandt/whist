@@ -5,10 +5,10 @@
   </tr>
   <tr *ngFor="let donne of donnes">
     <td>{{donne.annonce.name}}</td>
-    <td *ngFor="let joueur of joueurs">{{donne.score.get(joueur)}}</td>
+    <td *ngFor="let point of donne.score">{{point}}</td>
   </tr>
   <th>Total</th>
-  <th *ngFor="let joueur of joueurs">{{total.get(joueur)}}</th>
+  <th *ngFor="let point of total">{{point}}</th>
 </table>
 
 <app-add-annonce></app-add-annonce>

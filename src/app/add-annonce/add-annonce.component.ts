@@ -5,7 +5,6 @@ import {JoueursService} from "../joueurs.service";
 import {ScoreBoardComponent} from "../score-board/score-board.component";
 import {Donne} from "../models/donne";
 import {Joueur} from "../models/joueur";
-import {Score} from "../models/score";
 
 @Component({
   selector: 'app-add-annonce',
@@ -19,8 +18,8 @@ export class AddAnnonceComponent implements OnInit {
   public winner: Joueur;
 
   constructor(private annonceService: AnnoncesService,
-              private joueursService:JoueursService,
-              @Host()  private scoreBoardComponent: ScoreBoardComponent) {
+              private joueursService: JoueursService,
+              @Host() private scoreBoardComponent: ScoreBoardComponent) {
   }
 
   ngOnInit() {
@@ -28,16 +27,23 @@ export class AddAnnonceComponent implements OnInit {
     this.joueurs = this.joueursService.getJoueurs();
   }
 
-  public add(){
-    let points = new Map<Joueur, number>();
-    points.set(this.winner, this.selectedAnnonce.points);
-    let remaining = -this.selectedAnnonce.points/3;
+  public add() {
+    let points = new Array(4);
+    let winnerIndex = this.joueurs.indexOf(this.winner);
+    points[winnerIndex] = this.selectedAnnonce.points;
+    let remaining = -this.selectedAnnonce.points / 3;
 
-    this.joueurs.filter(joueur => joueur != this.winner)
-      .forEach(joueur => points.set(joueur, remaining));
+    this.joueurs
+      .forEach(
+        (joueur, index) => {
+          if (joueur != this.winner) {
+            points[index] = remaining;
+          }
+        }
+      );
 
 
-    this.scoreBoardComponent.addDonne(new Donne(this.selectedAnnonce, new Score(points)));
+    this.scoreBoardComponent.addDonne(new Donne(this.selectedAnnonce, points));
   }
 
 }
