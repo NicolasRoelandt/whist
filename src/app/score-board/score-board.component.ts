@@ -9,12 +9,13 @@ import {Donne} from "../models/donne";
   styleUrls: ['./score-board.component.css']
 })
 export class ScoreBoardComponent implements OnInit {
+  private size = 4;
   public joueurs : Joueur[];
   public donnes: Donne[] = [];
   public total: number[];
 
   constructor(private joueursService:JoueursService) {
-    this.total = new Array(4);
+    this.total = this.zeroArray();
   }
 
   ngOnInit() {
@@ -26,8 +27,16 @@ export class ScoreBoardComponent implements OnInit {
     this.updateTotal();
   }
 
-  private updateTotal() {
+  private zeroArray(): number[] {
+    return new Array(this.size).fill(0);
+  }
 
+  private updateTotal() {
+    this.total = this.donnes.reduce((sum, donne) => this.sumArrays(sum, donne.score), this.zeroArray())
+  }
+
+  private sumArrays(arr1: number[], arr2: number[]): number[] {
+    return arr1.map((val, i) => val + arr2[i]);
   }
 
 }
