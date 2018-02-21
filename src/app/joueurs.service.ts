@@ -6,7 +6,7 @@ export class JoueursService {
   private joueurs: Joueur[];
 
   constructor() {
-    this.joueurs = [new Joueur("a"), new Joueur("b"), new Joueur("c"), new Joueur("d")];
+    this.joueurs = [new Joueur("Pierre"), new Joueur("Paul"), new Joueur("Jacques"), new Joueur("Matthieu")];
   }
 
   public setJoueurs(names: string[]){
