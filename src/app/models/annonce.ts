@@ -1,4 +1,10 @@
+export class Contract {
+  name: string;
+  points: number[];
+}
+
 export class Annonce {
   name: string;
-  points: number;
+  won: Contract[];
+  lost: Contract[];
 }

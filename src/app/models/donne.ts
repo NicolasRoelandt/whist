@@ -1,7 +1,5 @@
-import {Annonce} from './annonce';
-
 export class Donne {
-  constructor(public annonce: Annonce,
+  constructor(public name: string,
               public score: number[]) {
   }
 }

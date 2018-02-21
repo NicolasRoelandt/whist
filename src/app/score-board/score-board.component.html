@@ -4,7 +4,7 @@
     <th *ngFor="let joueur of joueurs">{{joueur.name}}</th>
   </tr>
   <tr *ngFor="let donne of donnes">
-    <td>{{donne.annonce.name}}</td>
+    <td>{{donne.name}}</td>
     <td *ngFor="let point of donne.score">{{point}}</td>
   </tr>
   <th>Total</th>

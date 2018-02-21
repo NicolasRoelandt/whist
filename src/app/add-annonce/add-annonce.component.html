@@ -1,6 +1,13 @@
 <select [(ngModel)]="selectedAnnonce" required>
   <option *ngFor="let annonce of annonces" [ngValue]="annonce">{{annonce.name}}</option>
 </select>
+<select *ngIf="selectedAnnonce" [(ngModel)]="won" required>
+  <option [ngValue]="true">Won</option>
+  <option [ngValue]="false">Lost</option>
+</select>
+<select [(ngModel)]="selectedContract" required>
+  <option *ngFor="let contract of getContracts()" [ngValue]="contract">{{contract.name}}</option>
+</select>
 <select [(ngModel)]="winner" required>
   <option *ngFor="let joueur of joueurs" [ngValue]="joueur">{{joueur.name}}</option>
 </select>

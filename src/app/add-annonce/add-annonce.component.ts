@@ -1,5 +1,5 @@
 import {Component, Host, OnInit} from '@angular/core';
-import {Annonce} from "../models/annonce";
+import {Annonce, Contract} from "../models/annonce";
 import {AnnoncesService} from "../annonces.service";
 import {JoueursService} from "../joueurs.service";
 import {ScoreBoardComponent} from "../score-board/score-board.component";
@@ -14,6 +14,9 @@ import {Joueur} from "../models/joueur";
 export class AddAnnonceComponent implements OnInit {
   public annonces: Annonce[];
   public selectedAnnonce: Annonce;
+  public won: Boolean;
+  public selectedContract: Contract;
+
   public joueurs: Joueur[];
   public winner: Joueur;
 
@@ -27,23 +30,16 @@ export class AddAnnonceComponent implements OnInit {
     this.joueurs = this.joueursService.getJoueurs();
   }
 
+  public getContracts(): Contract[] {
+    if (this.won == null) {
+      return [];
+    }
+    return this.won ? this.selectedAnnonce.won : this.selectedAnnonce.lost;
+  }
+
+
   public add() {
-    let points = new Array(4);
-    let winnerIndex = this.joueurs.indexOf(this.winner);
-    points[winnerIndex] = this.selectedAnnonce.points;
-    let remaining = -this.selectedAnnonce.points / 3;
-
-    this.joueurs
-      .forEach(
-        (joueur, index) => {
-          if (joueur != this.winner) {
-            points[index] = remaining;
-          }
-        }
-      );
-
-
-    this.scoreBoardComponent.addDonne(new Donne(this.selectedAnnonce, points));
+    this.scoreBoardComponent.addDonne(new Donne(this.selectedAnnonce.name + " " + this.selectedContract.name, this.selectedContract.points));
   }
 
 }
