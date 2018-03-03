@@ -8,7 +8,7 @@
 <select [(ngModel)]="selectedContract" required>
   <option *ngFor="let contract of getContracts()" [ngValue]="contract">{{contract.name}}</option>
 </select>
-<select [(ngModel)]="winner" required>
+<select [(ngModel)]="winner1" required>
   <option *ngFor="let joueur of joueurs" [ngValue]="joueur">{{joueur.name}}</option>
 </select>
 <button (click)="add()">Add</button>

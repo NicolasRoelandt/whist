@@ -1,51 +1,47 @@
 [
   {
     "name": "Solo",
+    "type": "SOLO",
     "won": [
       {
         "name": "Juste",
-        "points": [15, -5, -5, -5]
+        "score": 15
       }, {
         "name": "+1 pli",
-        "points": [21, -7, -7, -7]
+        "score": 21
       },
       {
         "name": "+2 plis",
-        "points": [27, -9, -9, -9]
+        "score": 27
       }
     ],
     "lost": [
       {
         "name": "-1 pli",
-        "points": [-21, 7, 7, 7]
+        "score": -21
       }, {
         "name": "-2 plis",
-        "points": [-27, 9, 9, 9]
+        "score": -27
       },
       {
         "name": "-3 plis",
-        "points": [-33, 11, 11, 11]
+        "score": -33
       }
     ]
   },
   {
     "name": "piccolo",
+    "type": "SOLO",
     "won": [
       {
         "name": "Seul",
-        "points": [24, -8, -8, -8]
-      }, {
-        "name": "2 pic./2 gag.",
-        "points": [12, 12, -12, -12]
+        "score": 24
       }
     ],
     "lost": [
       {
         "name": "Seul",
-        "points": [-24, 8, 8, 8]
-      }, {
-        "name": "2 pic./2 gag.",
-        "points": [-12, -12, 12, 12]
+        "score": -24
       }
     ]
   }

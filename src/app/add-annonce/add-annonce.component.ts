@@ -18,7 +18,8 @@ export class AddAnnonceComponent implements OnInit {
   public selectedContract: Contract;
 
   public joueurs: Joueur[];
-  public winner: Joueur;
+  public winner1: Joueur;
+  public winner2: Joueur;
 
   constructor(private annonceService: AnnoncesService,
               private joueursService: JoueursService,
@@ -37,9 +38,21 @@ export class AddAnnonceComponent implements OnInit {
     return this.won ? this.selectedAnnonce.won : this.selectedAnnonce.lost;
   }
 
-
   public add() {
-    this.scoreBoardComponent.addDonne(new Donne(this.selectedAnnonce.name + " " + this.selectedContract.name, this.selectedContract.points));
+    let winningScore = this.selectedContract.score;
+    let losingScore = -this.selectedContract.score / 3;
+
+    let points: number[] = [];
+    for (let joueur of this.joueurs) {
+      if (this.winner1 == joueur) {
+        points.push(winningScore);
+      } else {
+        points.push(losingScore);
+      }
+    }
+
+
+    this.scoreBoardComponent.addDonne(new Donne(this.selectedAnnonce.name + " " + this.selectedContract.name, points));
   }
 
 }
