@@ -1,7 +1,104 @@
 [
   {
+    "name": "Trou",
+    "double": true,
+    "won": [
+      {
+        "name": "9 plis",
+        "score": 10
+      }, {
+        "name": "10 plis",
+        "score": 14
+      },
+      {
+        "name": "11 plis",
+        "score": 18
+      },
+      {
+        "name": "12 plis",
+        "score": 22
+      },
+      {
+        "name": "13 plis",
+        "score": 30
+      }
+    ],
+    "lost": [
+      {
+        "name": "8 plis",
+        "score": -14
+      }, {
+        "name": "7 plis",
+        "score": -18
+      },
+      {
+        "name": "6 plis",
+        "score": -22
+      },
+      {
+        "name": "5 plis",
+        "score": -26
+      }
+    ]
+  },
+  {
+    "name": "Emballage",
+    "double": true,
+    "won": [
+      {
+        "name": "Juste",
+        "score": 5
+      },
+      {
+        "name": "+1 pli",
+        "score": 7
+      },
+      {
+        "name": "+2 plis",
+        "score": 9
+      },
+      {
+        "name": "+3 plis",
+        "score": 11
+      },
+      {
+        "name": "+4 plis",
+        "score": 13
+      },
+      {
+        "name": "+5 plis",
+        "score": 20
+      }
+    ],
+    "lost": [
+      {
+        "name": "-1 pli",
+        "score": -7
+      },
+      {
+        "name": "-2 plis",
+        "score": -9
+      },
+      {
+        "name": "-3 plis",
+        "score": -11
+      },
+      {
+        "name": "-4 plis",
+        "score": -13
+      },
+      {
+        "name": "-5 plis",
+        "score": -15
+      },
+      {
+        "name": "-6 plis",
+        "score": -17
+      }
+    ]
+  },
+  {
     "name": "Solo",
-    "type": "SOLO",
     "won": [
       {
         "name": "Juste",
@@ -30,8 +127,45 @@
     ]
   },
   {
-    "name": "piccolo",
-    "type": "SOLO",
+    "name": "Petite misère",
+    "won": [
+      {
+        "name": "Seul",
+        "score": 18
+      },
+      {
+        "name": "Solo 8 s/petite misère",
+        "score": 27
+      }
+    ],
+    "lost": [
+      {
+        "name": "Seul",
+        "score": -18
+      },
+      {
+        "name": "Solo 8 s/petite misère",
+        "score": -27
+      }
+    ]
+  },
+  {
+    "name": "Piccolissimo",
+    "won": [
+      {
+        "name": "Seul",
+        "score": 21
+      }
+    ],
+    "lost": [
+      {
+        "name": "Seul",
+        "score": -21
+      }
+    ]
+  },
+  {
+    "name": "Piccolo",
     "won": [
       {
         "name": "Seul",
@@ -42,6 +176,69 @@
       {
         "name": "Seul",
         "score": -24
+      }
+    ]
+  },
+  {
+    "name": "Abondance",
+    "won": [
+      {
+        "name": "Seul",
+        "score": 30
+      }
+    ],
+    "lost": [
+      {
+        "name": "Seul",
+        "score": -30
+      }
+    ]
+  },
+  {
+    "name": "Grande misère",
+    "won": [
+      {
+        "name": "Seul",
+        "score": 36
+      }, {
+        "name": "/trou",
+        "score": 42
+      }, {
+        "name": "/table",
+        "score": 48
+      }, {
+        "name": "/trou/table",
+        "score": 54
+      }
+    ],
+    "lost": [
+      {
+        "name": "Seul",
+        "score": -36
+      }, {
+        "name": "/trou",
+        "score": -42
+      }, {
+        "name": "/table",
+        "score": -48
+      }, {
+        "name": "/trou/table",
+        "score": -54
+      }
+    ]
+  },
+  {
+    "name": "Solo chelem",
+    "won": [
+      {
+        "name": "Seul",
+        "score": 60
+      }
+    ],
+    "lost": [
+      {
+        "name": "Seul",
+        "score": -60
       }
     ]
   }

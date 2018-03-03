@@ -40,11 +40,12 @@ export class AddAnnonceComponent implements OnInit {
 
   public add() {
     let winningScore = this.selectedContract.score;
-    let losingScore = -this.selectedContract.score / 3;
+    let losingScore = this.selectedAnnonce.double ?
+      -this.selectedContract.score : -this.selectedContract.score / 3;
 
     let points: number[] = [];
     for (let joueur of this.joueurs) {
-      if (this.winner1 == joueur) {
+      if (this.winner1 == joueur || this.winner2 == joueur) {
         points.push(winningScore);
       } else {
         points.push(losingScore);

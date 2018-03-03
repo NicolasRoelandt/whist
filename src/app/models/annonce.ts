@@ -5,12 +5,7 @@ export class Contract {
 
 export class Annonce {
   name: string;
-  type: Type;
+  double: Boolean;
   won: Contract[];
   lost: Contract[];
-}
-
-export enum Type {
-  SOLO,
-  DOUBLE
 }

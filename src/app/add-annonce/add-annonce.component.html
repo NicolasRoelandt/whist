@@ -11,4 +11,7 @@
 <select [(ngModel)]="winner1" required>
   <option *ngFor="let joueur of joueurs" [ngValue]="joueur">{{joueur.name}}</option>
 </select>
+<select *ngIf="selectedAnnonce.double" [(ngModel)]="winner2" required>
+  <option *ngFor="let joueur of joueurs" [ngValue]="joueur">{{joueur.name}}</option>
+</select>
 <button (click)="add()">Add</button>
