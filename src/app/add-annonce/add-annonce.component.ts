@@ -39,6 +39,9 @@ export class AddAnnonceComponent implements OnInit {
   }
 
   public add() {
+    if (!this.selectedAnnonce.double) {
+      this.winner2 == null;
+    }
     let winningScore = this.selectedContract.score;
     let losingScore = this.selectedAnnonce.double ?
       -this.selectedContract.score : -this.selectedContract.score / 3;
