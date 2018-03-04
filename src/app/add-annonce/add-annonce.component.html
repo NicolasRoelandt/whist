@@ -5,13 +5,13 @@
   <option [ngValue]="true">Won</option>
   <option [ngValue]="false">Lost</option>
 </select>
-<select [(ngModel)]="selectedContract" required>
+<select *ngIf="selectedAnnonce" [(ngModel)]="selectedContract" required>
   <option *ngFor="let contract of getContracts()" [ngValue]="contract">{{contract.name}}</option>
 </select>
-<select [(ngModel)]="winner1" required>
+<select *ngIf="selectedContract" [(ngModel)]="winner1" required>
   <option *ngFor="let joueur of joueurs" [ngValue]="joueur">{{joueur.name}}</option>
 </select>
-<select *ngIf="selectedAnnonce.double" [(ngModel)]="winner2" required>
+<select *ngIf="selectedContract && selectedAnnonce.double" [(ngModel)]="winner2" required>
   <option *ngFor="let joueur of joueurs" [ngValue]="joueur">{{joueur.name}}</option>
 </select>
 <button (click)="add()">Add</button>
