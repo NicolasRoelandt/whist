@@ -9,6 +9,8 @@ import {Router} from "@angular/router";
 })
 export class PlayersSetupComponent implements OnInit {
   public names: string[] = [];
+  public mort: boolean;
+  public additionalPlayer: string;
 
   constructor(private joueursService:JoueursService, private router:Router) {
     for(let i = 1; i<= 4; i++){
@@ -24,8 +26,16 @@ export class PlayersSetupComponent implements OnInit {
   }
 
   public click(){
+    if (this.additionalPlayer) {
+      this.names.push(this.additionalPlayer);
+    }
     this.joueursService.setJoueurs(this.names);
     this.router.navigate(['/scoreboard'])
   }
+
+  public more() {
+    this.mort = true;
+  }
+
 
 }

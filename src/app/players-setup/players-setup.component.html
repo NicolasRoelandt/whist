@@ -1,4 +1,6 @@
 <div *ngFor="let name of names; let i = index; trackBy:trackByFn">
   <input type="text" name="name" [(ngModel)]="names[i]"/>
 </div>
+<input *ngIf="mort" type="text" name="name" [(ngModel)]="additionalPlayer"/>
+<button (click)="more()">Ajouter un joueur</button>
 <button (click)="click()">Commencer!</button>

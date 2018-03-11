@@ -21,6 +21,9 @@ export class AddAnnonceComponent implements OnInit {
   public winner1: Joueur;
   public winner2: Joueur;
 
+  public hasMort: boolean;
+  public mort: Joueur;
+
   constructor(private annonceService: AnnoncesService,
               private joueursService: JoueursService,
               @Host() private scoreBoardComponent: ScoreBoardComponent) {
@@ -29,6 +32,7 @@ export class AddAnnonceComponent implements OnInit {
   ngOnInit() {
     this.annonces = this.annonceService.getAnnonces();
     this.joueurs = this.joueursService.getJoueurs();
+    this.hasMort = this.joueurs.length > 4;
   }
 
   public getContracts(): Contract[] {
@@ -48,7 +52,9 @@ export class AddAnnonceComponent implements OnInit {
 
     let points: number[] = [];
     for (let joueur of this.joueurs) {
-      if (this.winner1 == joueur || this.winner2 == joueur) {
+      if (joueur == this.mort) {
+        points.push(0);
+      } else if (this.winner1 == joueur || this.winner2 == joueur) {
         points.push(winningScore);
       } else {
         points.push(losingScore);

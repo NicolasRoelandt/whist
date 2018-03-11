@@ -9,17 +9,16 @@ import {Donne} from "../models/donne";
   styleUrls: ['./score-board.component.css']
 })
 export class ScoreBoardComponent implements OnInit {
-  private size = 4;
   public joueurs : Joueur[];
   public donnes: Donne[] = [];
   public total: number[];
 
   constructor(private joueursService:JoueursService) {
-    this.total = this.zeroArray();
   }
 
   ngOnInit() {
     this.joueurs = this.joueursService.getJoueurs();
+    this.total = this.zeroArray();
   }
 
   public addDonne(donne:Donne){
@@ -28,7 +27,7 @@ export class ScoreBoardComponent implements OnInit {
   }
 
   private zeroArray(): number[] {
-    return new Array(this.size).fill(0);
+    return new Array(this.joueurs.length).fill(0);
   }
 
   private updateTotal() {
