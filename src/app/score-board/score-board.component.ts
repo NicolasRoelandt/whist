@@ -39,4 +39,8 @@ export class ScoreBoardComponent implements OnInit {
     return arr1.map((val, i) => val + arr2[i]);
   }
 
+  public deleteDonne(i: number) {
+    this.donnes.splice(i, 1);
+    this.updateTotal();
+  }
 }
