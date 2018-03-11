@@ -3,11 +3,11 @@
     <th>Annonce</th>
     <th *ngFor="let joueur of joueurs">{{joueur.name}}</th>
   </tr>
-  <tr *ngFor="let donne of donnes; let i = index">
+  <tr *ngFor="let donne of donnes">
     <td>{{donne.name}}</td>
     <td *ngFor="let point of donne.score">{{point}}</td>
     <td>
-      <button style="color: red;" (click)="deleteDonne(i)">X</button>
+      <button style="color: red;" (click)="deleteDonne(index)">X</button>
     </td>
   </tr>
   <th>Total</th>
